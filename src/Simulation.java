@@ -16,6 +16,7 @@ public class Simulation {
 
     public void draw(PApplet sketch) {
         for (Particle particle : particles) {
+            particle.move(0.5f);
             particle.draw(sketch);
         }
     }
