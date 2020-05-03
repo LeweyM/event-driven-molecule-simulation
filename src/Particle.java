@@ -10,11 +10,11 @@ public class Particle {
     private final double radius;
 
     public Particle(Random r) {
+        this.radius = 15;
         this.vx = r.nextDouble() - .5;
         this.vy = r.nextDouble() - .5;
-        this.px = r.nextDouble() * 400;
-        this.py = r.nextDouble() * 400;
-        this.radius = 10;
+        this.px = r.nextDouble() * (400 - radius*2) + radius;
+        this.py = r.nextDouble() * (400 - radius*2) + radius;
     }
 
     public void move(double dt) {
