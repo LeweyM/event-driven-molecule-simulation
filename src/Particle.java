@@ -18,7 +18,8 @@ public class Particle {
     }
 
     public void move(double dt) {
-
+        if (px - (radius/2) < 0 || px + radius/2 > 400) vx *= -1;
+        if (py - (radius/2) < 0 || py + radius/2 > 400) vy *= -1;
 
         px = px + (dt * vx);
         py = py + (dt * vy);
