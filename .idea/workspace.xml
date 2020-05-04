@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d4b6956-ea72-4069-be9b-e8b432ccd876" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/algs4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventSimulation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eventSimulation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/eventSimulation/Particle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/eventSimulation/Particle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/eventSimulation/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/eventSimulation/Simulation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Particle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Particle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.java" afterDir="false" />
     </list>
@@ -46,11 +50,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -82,7 +87,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588512296612</updated>
-      <workItem from="1588512300802" duration="2502000" />
+      <workItem from="1588512300802" duration="8465000" />
+      <workItem from="1588588183198" duration="1800000" />
     </task>
     <servers />
   </component>
@@ -94,22 +100,26 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1588513016988" />
-    <state width="1680" height="302" key="GridCell.Tab.0.bottom" timestamp="1588515057699">
+    <state x="627" y="362" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1588589209364">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588515057699" />
-    <state width="1680" height="302" key="GridCell.Tab.0.center" timestamp="1588515057697">
+    <state x="627" y="362" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588589209364" />
+    <state width="1680" height="302" key="GridCell.Tab.0.bottom" timestamp="1588590007653">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588515057697" />
-    <state width="1680" height="302" key="GridCell.Tab.0.left" timestamp="1588515057696">
+    <state width="1680" height="302" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1588590007653" />
+    <state width="1680" height="302" key="GridCell.Tab.0.center" timestamp="1588590007651">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588515057696" />
-    <state width="1680" height="302" key="GridCell.Tab.0.right" timestamp="1588515057698">
+    <state width="1680" height="302" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1588590007651" />
+    <state width="1680" height="302" key="GridCell.Tab.0.left" timestamp="1588590007650">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588515057698" />
+    <state width="1680" height="302" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1588590007650" />
+    <state width="1680" height="302" key="GridCell.Tab.0.right" timestamp="1588590007652">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1680" height="302" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588590007652" />
     <state width="1680" height="372" key="GridCell.Tab.1.bottom" timestamp="1588513260499">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -130,14 +140,22 @@
     </state>
     <state width="1680" height="372" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1588513260499" />
     <state width="1680" height="372" key="GridCell.Tab.1.right/0.23.1680.967@0.23.1680.967" timestamp="1588513220606" />
-    <state x="328" y="106" key="SettingsEditor" timestamp="1588512477086">
+    <state x="328" y="106" key="SettingsEditor" timestamp="1588586031084">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1588512477086" />
-    <state x="552" y="425" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588512455245">
+    <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1588586031084" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1588588185963">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="552" y="425" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1680.1050@0.0.1680.1050" timestamp="1588512455245" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588588185963" />
+    <state x="552" y="425" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588586019505">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="552" y="425" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1680.1050@0.0.1680.1050" timestamp="1588586019505" />
+    <state x="578" y="285" key="extract.method.dialog" timestamp="1588516343840">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="578" y="285" key="extract.method.dialog/0.0.1680.1050@0.0.1680.1050" timestamp="1588516343840" />
     <state x="505" y="233" key="search.everywhere.popup" timestamp="1588512310934">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
