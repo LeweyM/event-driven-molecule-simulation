@@ -1,6 +1,5 @@
+import edu.princeton.cs.algs4.StdRandom;
 import processing.core.PApplet;
-
-import java.util.Random;
 
 public class Particle {
     private double vx;
@@ -9,30 +8,23 @@ public class Particle {
     private double py;
     private final double radius;
     private final double mass;
+    private int count;
 
-    public Particle(Random r) {
-        this.radius = 10;
-        this.vx = (r.nextDouble() - .5);
-        this.vy = (r.nextDouble() - .5);
-        this.px = r.nextDouble() * (400 - radius*2) + radius;
-        this.py = r.nextDouble() * (400 - radius*2) + radius;
-        this.mass = 100;
+    public Particle() {
+        px     = StdRandom.uniform(0.0, 1.0);
+        py     = StdRandom.uniform(0.0, 1.0);
+        vx     = StdRandom.uniform(-0.005, 0.005);
+        vy     = StdRandom.uniform(-0.005, 0.005);
+        radius = 0.02;
+        mass   = 0.5;
     }
 
     public void move(double dt) {
-        if (px - (radius/2) < 0 || px + radius/2 > 400) vx *= -1;
-        if (py - (radius/2) < 0 || py + radius/2 > 400) vy *= -1;
-
-        px = px + (dt * vx);
-        py = py + (dt * vy);
+        px += (dt * vx);
+        py += (dt * vy);
     }
 
     public void bounceOff(Particle other) {
-
-        //roll back clock here...
-        double t = timeToHit(other);
-        move(t);
-
         double dx  = other.px - this.px;
         double dy  = other.py - this.py;
         double dvx = other.vx - this.vx;
@@ -53,41 +45,59 @@ public class Particle {
         other.vx -= fx / other.mass;
         other.vy -= fy / other.mass;
 
-        // roll forward again
-        move(-t);
+        this.count++;
+        other.count++;
     }
 
-    public double timeToHit(Particle other) {
-        if (this == other) return Double.POSITIVE_INFINITY;
-        double dx  = other.px - this.px;
-        double dy  = other.py - this.py;
-        double dvx = other.vx - this.vx;
-        double dvy = other.vy - this.vy;
+    public double timeToHit(Particle that) {
+        if (this == that) return Double.POSITIVE_INFINITY;
+        double dx  = that.px - this.px;
+        double dy  = that.py - this.py;
+        double dvx = that.vx - this.vx;
+        double dvy = that.vy - this.vy;
         double dvdr = dx*dvx + dy*dvy;
         if (dvdr > 0) return Double.POSITIVE_INFINITY;
         double dvdv = dvx*dvx + dvy*dvy;
         if (dvdv == 0) return Double.POSITIVE_INFINITY;
         double drdr = dx*dx + dy*dy;
-        double sigma = this.radius + other.radius;
+        double sigma = this.radius + that.radius;
         double d = (dvdr*dvdr) - dvdv * (drdr - sigma*sigma);
-//        if (d < 0) return Double.POSITIVE_INFINITY;
+        // if (drdr < sigma*sigma) StdOut.println("overlapping particles");
+        if (d < 0) return Double.POSITIVE_INFINITY;
         return -(dvdr + Math.sqrt(d)) / dvdv;
     }
 
     public void draw(PApplet sketch) {
-        sketch.ellipse((float) px, ((float) py), ((float) radius), ((float) radius));
-    }
-
-    public boolean overlap(Particle other) {
-        if (this == other) return false;
-        double dx  = other.px - this.px;
-        double dy  = other.py - this.py;
-        double drdr = dx*dx + dy*dy;
-        double sigma = this.radius + other.radius;
-        return (drdr < sigma*sigma);
+        sketch.ellipse((float) px * 400, ((float) py * 400), ((float) radius * 400), ((float) radius * 400));
     }
 
     public double kineticEnergy() {
         return 0.5 * mass * (vx*vx + vy*vy);
+    }
+
+    public double timeToHitVerticalWall() {
+        if      (vx > 0) return (1.0 - px - radius) / vx;
+        else if (vx < 0) return (radius - px) / vx;
+        else             return Double.POSITIVE_INFINITY;
+    }
+
+    public double timeToHitHorizontalWall() {
+        if      (vy > 0) return (1.0 - py - radius) / vy;
+        else if (vy < 0) return (radius - py) / vy;
+        else             return Double.POSITIVE_INFINITY;
+    }
+
+    public void bounceOffVerticalWall() {
+        vx = -vx;
+        count++;
+    }
+
+    public void bounceOffHorizontalWall() {
+        vy = -vy;
+        count++;
+    }
+
+    public int count() {
+        return count;
     }
 }
